@@ -37,6 +37,5 @@ for g in mygroups.results:
     print "ID:", e.id
     print strftime('%Y-%m-%d %H:%M:%S', localtime(e.time/1000))
     print e.description[:80], "..."
-    print 
-    break
-  break
+    break # stop on the first event
+  break # stop on the first group
