@@ -7,7 +7,10 @@
 
 from __future__ import with_statement
 
+import os
+import jinja2
 import webapp2
+import logging
 
 from lib import meetup_api_client as mac
 
@@ -15,6 +18,9 @@ import urllib2
 from time import localtime, strftime
 
 from secrets import MEETUP_API_KEY
+
+template_env = jinja2.Environment(
+  loader=jinja2.FileSystemLoader(os.path.join(os.getcwd(),'templates')))
 
 #myuser ='lucasrangit'
 myid = 10705006
@@ -25,12 +31,21 @@ qr_url = 'https://chart.googleapis.com/chart?cht=qr&choe=UTF-8&chs=150x150'
 class MainPage(webapp2.RequestHandler):
 
   def get(self):
-    self.response.headers['Content-Type'] = 'text/plain'
-    
     mucli = mac.Meetup(MEETUP_API_KEY)
 
     mygroups = mucli.get_groups(member_id=myid)
 
+    g = mygroups.results[0]
+    logging.info("Name: " + str(g.name))
+    
+    template = template_env.get_template('home.html')
+    context = {
+      'name': g.name,
+      'link' : g.link,
+    }
+    self.response.out.write(template.render(context))
+
+    return
     for g in mygroups.results:
       self.response.write("ID: " + str(g.id))
       self.response.write(g.name)

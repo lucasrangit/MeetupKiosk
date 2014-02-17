@@ -33,3 +33,11 @@ li {
   vertical-align: middle;
 }
 
+#chapter-banner {
+
+}
+
+#chapter-banner h1 a {
+  text-shadow: none; /*reset base css first; add it again only if applicable*/
+
+}
