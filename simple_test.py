@@ -5,7 +5,8 @@
 # https://github.com/omwah/python-api-client for the fork with API v2 support
 # https://developers.google.com/chart/infographics/docs/qr_codes QR code image
 
-# TODO display date and time of event
+# TODO use color theme from meetup page
+
 
 from __future__ import with_statement
 from lib import meetup_api_client as mac
