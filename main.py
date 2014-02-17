@@ -71,22 +71,6 @@ class MainPage(webapp2.RequestHandler):
     }
     self.response.out.write(template.render(context))
 
-    return
-    for g in mygroups.results:
-      self.response.write("ID: " + str(g.id))
-      self.response.write(g.name)
-      self.response.write(g.group_photo['photo_link'])
-      self.response.write(g.link)
-      self.response.write("QR code: " + qr_url + "&chl=" + g.link)
-      self.response.write(g.description[:80] + "...")
-      self.response.write("Upcoming events: " + str(g.get_events(mucli,status="upcoming",text_format="simplehtml").meta['count']))
-      for e in g.get_events(mucli,status="upcoming").results:
-        self.response.write("ID: " + str(e.id))
-        self.response.write(strftime('%Y-%m-%d %H:%M:%S', localtime(e.time/1000)))
-        self.response.write(e.description[:80] + "...")
-        break # stop on the first event
-      break # stop on the first group
-
 
 application = webapp2.WSGIApplication([
   ('/', MainPage),
