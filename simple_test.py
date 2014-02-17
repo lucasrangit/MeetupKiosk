@@ -13,7 +13,7 @@ from lib import meetup_api_client as mac
 import urllib2
 from time import localtime, strftime
 
-import secret
+from secrets import MEETUP_API_KEY
 
 #myuser ='lucasrangit'
 myid = 10705006
@@ -21,7 +21,7 @@ myid = 10705006
 # QR code max 177x177 px and 4,296 alphanumeric characters.
 qr_url = 'https://chart.googleapis.com/chart?cht=qr&choe=UTF-8&chs=150x150'
 
-mucli = mac.Meetup(secret.MEETUP_API_KEY)
+mucli = mac.Meetup(MEETUP_API_KEY)
 
 mygroups = mucli.get_groups(member_id=myid)
 
