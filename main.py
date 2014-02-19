@@ -58,7 +58,7 @@ class MainPage(webapp2.RequestHandler):
       'link' : g.link,
       'photo_link' : group_photo_link,
       'qr_code' : qr_url + "&chl=" + g.link,
-      'description' : remove_img_tags(g.description)[:500],
+      'description' : remove_img_tags(g.description),
       'event_name' : event_name,
       'event_datetime' : event_datetime,
     }

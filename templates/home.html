@@ -20,13 +20,13 @@
         <img class="photo" style="max-width: 500px; max-height: 400px; min-height: 400px; width: auto" src="{{ photo_link }}" alt="Group Photo">
       </a>
     {% endif %}
-    <div id="group-desc-bubble" class="block align-center margin-top" style="text-align:center; padding-right: 27px; padding-left: 27px; width: 713px;" align="center">
+    <div id="group-desc-bubble" class="block margin-top" style="padding-right: 27px; padding-left: 27px; width: 713px; width: 700px; height: 300px; overflow: auto; margin: 20px auto; padding: 10px 20px; ">
       {{ description }}
     </div>
     <div id="content">
       {% if event_name %}
         <ul class="event-list">
-          <li class="event-item" style="text-align:center; padding-right: 27px; padding-left: 27px; width: 713px;">
+          <li class="event-item" style="text-align:center; padding-right: 27px; padding-left: 27px; width: 713px; margin: 20px auto;">
             <h3>Join us for {{ event_name }} on {{ event_datetime }}</h3>
           </li>
         </ul>
