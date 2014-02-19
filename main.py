@@ -1,10 +1,3 @@
-# http://www.meetup.com/meetup_api/console/?path=/2/members
-# https://github.com/davemosk/python-api-client/wiki for API call examples
-# https://github.com/omwah/python-api-client for the fork with API v2 support
-# https://developers.google.com/chart/infographics/docs/qr_codes QR code image
-
-# TODO Create CSS that mimic Meetup.com
-
 from __future__ import with_statement
 
 import os
